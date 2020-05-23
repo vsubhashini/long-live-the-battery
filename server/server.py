@@ -10,6 +10,7 @@ import tensorflow as tf
 from flask import Flask, render_template, request
 from plot import plot_single_prediction
 from constants import NUM_SAMPLES, MODEL_DIR, SAMPLES_DIR
+from custom_metrics_losses import mae_current_cycle, mae_remaining_cycles
 from clippy import Clippy, clipped_relu
 
 app = Flask(__name__)
@@ -17,7 +18,10 @@ app = Flask(__name__)
 
 def load_model():
     global model  # bc YOLO
-    model = tf.keras.experimental.load_from_saved_model(MODEL_DIR, custom_objects={'clippy': Clippy(clipped_relu)})
+    model = tf.keras.models.load_model(MODEL_DIR,
+                                       custom_objects={'clippy': Clippy(clipped_relu),
+                                                       'mae_current_cycle': mae_current_cycle,
+                                                       'mae_remaining_cycles': mae_remaining_cycles})
 
 
 def make_prediction(cycle_data, response):
