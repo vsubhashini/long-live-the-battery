@@ -107,7 +107,7 @@ To train and predict the model on a Colab, see the notebook here:
 [https://github.com/vsubhashini/long-live-the-battery/blob/master/colabs/model_training_battery_life.ipynb](https://github.com/vsubhashini/long-live-the-battery/blob/master/colabs/model_training_battery_life.ipynb)
 
 This also includes a tensorboard to view the loss as the model trains.
-[!tensorboar
-image](https://github.com/vsubhashini/long-live-the-battery/blob/master/colabs/tensorboard_600epochs_figure.png)
+![tensorboar
+image](colabs/tensorboard_600epochs_figure.png)
 
 
