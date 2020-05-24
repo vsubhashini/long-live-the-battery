@@ -84,7 +84,6 @@ To run the model in Google Cloud Platform (team members only):
 ```
 Follow the output URL to stream logs.
 
-
 ## Predict
 
 Every training run saves a TensorBoard logfile and at least one model checkpoint by default in the *Graph* directory. One way to test your model's performance without writing your own [TensorFlow Keras code](https://www.tensorflow.org/beta/guide/keras/training_and_evaluation) is to start a local Flask server that serves predictions:
@@ -100,3 +99,15 @@ cd server
 python server.py
 ```
 5. Now visit "localhost:5000" in your browser and you should see the start page with a prompt to upload battery data in json-format. The site also lets you select the  sample data randomly.
+
+## Train and Predict on a Google Colab
+
+To train and predict the model on a Colab, see the notebook here:
+
+[https://github.com/vsubhashini/long-live-the-battery/blob/master/colabs/model_training_battery_life.ipynb](https://github.com/vsubhashini/long-live-the-battery/blob/master/colabs/model_training_battery_life.ipynb)
+
+This also includes a tensorboard to view the loss as the model trains.
+[!tensorboar
+image](https://github.com/vsubhashini/long-live-the-battery/blob/master/colabs/tensorboard_600epochs_figure.png)
+
+
