@@ -2,6 +2,9 @@
 
 Predicting total battery cycle life time with [TensorFlow 2](https://www.tensorflow.org/beta). We're going to publish a blog post describing the project in-depth soon.
 
+[Blog post is
+here](https://towardsdatascience.com/predicting-battery-lifetime-with-cnns-c5e1faeecc8f)
+
 This project is based on the work done in the paper ['Data driven prediciton of battery cycle life before capacity degradation'](https://www.nature.com/articles/s41560-019-0356-8) by K.A. Severson, P.M. Attia, et al., and uses the corresponding data set. The original instructions for how to load the data can be found [here](https://github.com/rdbraatz/data-driven-prediction-of-battery-cycle-life-before-capacity-degradation).
 
 
@@ -33,13 +36,21 @@ long-live-the-battery
 |   ├── 2018-04-12_batchdata_updated_struct_errorcorrect.mat
 |   └── 2017-06-30_batchdata_updated_struct_errorcorrect.mat
 ```
-2. Make sure *data* is empty otherwise. Then from the base directory run
+2. Use the sample script below to convert the .mat files to batch.pkl files
+```
+python convert_mat_to_pkl.py
+```
+Note: This script converts the first batch of .mat data to batch1.pkl. The code to convert the other
+batches are
+[here](https://github.com/rdbraatz/data-driven-prediction-of-battery-cycle-life-before-capacity-degradation) in the original paper.
+
+3. Make sure *data* is empty otherwise. Then from the base directory run
 ```
 python -m trainer.data_preprocessing
 ```
 to create a *processed_data.pkl* file.
 
-3. Then run
+4. Then run
 ```
 python -m trainer.data_pipeline
 ```
