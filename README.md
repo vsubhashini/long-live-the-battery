@@ -14,7 +14,7 @@ We recommend to set up a virtual environment using a tool like [Virtualenv](http
 
 Clone this repo
 ```
-git clone https://github.com/dsr-18/long-live-the-battery
+git clone https://github.com/vsubhashini/long-live-the-battery.git
 ```
 and install dependencies.
 ```
